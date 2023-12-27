@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WanderLust | Create new Listing</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <% layout("/layouts/boilerplate") %>
+
+    <div class="container mt-5">
+      <!-- Form for creating a new listing -->
+      <h3>Create a New Listing</h3>
+      <form
+        method="post"
+        action="/listings"
+        class="row g-3 needs-validation"
+        novalidate
+        enctype="multipart/form-data"
+      >
+        <!-- Title input -->
+        <div class="col-md-6">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="listing[title]"
+            placeholder="Enter the title here"
+            required
+          />
+          <div class="valid-feedback">Title looks good</div>
+        </div>
+        <!-- Description textarea -->
+        <div class="col-12">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="listing[description]"
+            placeholder="Enter the description here"
+            required
+          ></textarea>
+          <div class="invalid-feedback">Please Enter a short description</div>
+        </div>
+        <!-- Image URL/Link input -->
+        <div class="col-md-6">
+          <label for="image" class="form-label">Upload Listing Image</label>
+          <input
+            type="file"
+            class="form-control"
+            id="image"
+            name="listing[image]"
+            required
+          />
+        </div>
+        <!-- Price input -->
+        <div class="col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="listing[price]"
+            placeholder="Enter the price"
+            required
+          />
+          <div class="invalid-feedback">Please enter valid price</div>
+        </div>
+        <!-- Country input -->
+        <div class="col-md-4">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            name="listing[country]"
+            placeholder="Enter the country name"
+            required
+          />
+          <div class="invalid-feedback">Country should be valid</div>
+        </div>
+        <!-- Location input -->
+        <div class="col-md-4">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            class="form-control"
+            id="location"
+            name="listing[location]"
+            placeholder="Enter the location"
+            required
+          />
+          <div class="invalid-feedback">Location should be valid</div>
+        </div>
+        <!-- Submit button -->
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
